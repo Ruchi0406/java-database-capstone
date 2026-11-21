@@ -1,14 +1,18 @@
 # Smart Clinic - Schema & Architecture
 
-## 1. Architecture Overview
-Smart Clinic is a 3-layer application:
-- Presentation Layer: User Interface for Patients, Doctors, Admin
-- Business Logic Layer: Appointment booking, Doctor availability, Prescription management
-- Data Access Layer: JDBC / JPA to connect with Database
+## Section 1: Architecture Summary
+Smart Clinic is a web application for managing clinic operations. It uses a 3-layer architecture. The user interacts with the presentation layer through browser. The business logic layer handles appointment booking, doctor availability and prescription rules. The data access layer connects to the database using JDBC/JPA and performs CRUD operations. This separation makes the app easy to maintain and scale.
 
-Flow: User -> Controller -> Service -> Repository -> Database
+## Section 2: How Data and Control Move Through the System
+1. User opens Smart Clinic app in browser and sends a request
+2. Controller receives the request and validates the input
+3. Controller calls the Service layer for business logic
+4. Service layer checks rules like doctor availability and appointment time
+5. Service layer calls the Repository / DAO layer
+6. Repository executes SQL query on the database and gets result
+7. Result goes back Service -> Controller -> User screen as confirmation
 
-## 2. Database Schema
+## Section 3: Database Schema
 
 ### Table: patients
 - patient_id INT, PK, Auto Increment
@@ -39,7 +43,7 @@ Flow: User -> Controller -> Service -> Repository -> Database
 - dosage VARCHAR(100)
 - notes TEXT
 
-## 3. Relationships
+## Section 4: Relationships
 - One Patient can have Many Appointments
 - One Doctor can have Many Appointments
 - One Appointment has One Prescription
