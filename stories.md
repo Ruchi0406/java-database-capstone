@@ -12,7 +12,8 @@
 2. As a doctor, I want to add a prescription so that the patient knows the medicine.
 3. As a doctor, I want to view patient details so that I can treat them correctly.
 4. As a doctor, I want to update my availability so that patients can book only when I am free.
-
+5.  As a doctor, I want to cancel an appointment so that I can manage emergencies.
+  
 ## Admin User Stories
 1. As an admin, I want to add new doctors so that patients can book them.
 2. As an admin, I want to view all appointments so that I can manage the clinic.
